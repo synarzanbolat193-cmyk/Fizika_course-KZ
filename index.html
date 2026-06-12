@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Физика Курсы - 7-9 Сынып | Физика_курсы-KZ</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- НАВИГАЦИЯ -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">⚛️ Физика Курсы</h1>
+            <div class="nav-right">
+                <span id="userStatus" class="user-status">Қатысушы: Жүктеу...</span>
+                <button id="logoutBtn" class="logout-btn" style="display:none;">Шығу</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- КІРУ ЭКРАНЫ -->
+    <div id="authContainer" class="auth-container">
+        <div class="auth-box">
+            <h2>⚛️ Физика Курсына қош келдіңіз!</h2>
+            <p class="auth-subtitle">7-9 сынып үшін толық физика курсы</p>
+            <form id="authForm">
+                <input type="text" id="username" placeholder="Аты-жөні" required>
+                <input type="email" id="email" placeholder="Электрондық пошта" required>
+                <input type="password" id="password" placeholder="Құпия сөз (6+ символ)" required>
+                <button type="submit" class="auth-btn">Кіру / Тіркеу</button>
+                <p class="auth-info">💡 Есептік жазба автоматты құрылады</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- НЕГІЗГІ ИНТЕРФЕЙС -->
+    <div id="mainContainer" class="main-container" style="display:none;">
+        <aside class="sidebar">
+            <h3>📚 Модульдер</h3>
+            <ul class="module-list">
+                <li class="module-item" onclick="loadModule('mechanics', this)">
+                    <span class="module-icon">🔵</span>
+                    <span>Механика</span>
+                    <span class="module-progress" id="progress-mechanics">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('kinematics', this)">
+                    <span class="module-icon">🟢</span>
+                    <span>Кинематика</span>
+                    <span class="module-progress" id="progress-kinematics">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('molecular', this)">
+                    <span class="module-icon">🟡</span>
+                    <span>Молекулалық физика</span>
+                    <span class="module-progress" id="progress-molecular">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('thermodynamics', this)">
+                    <span class="module-icon">🔴</span>
+                    <span>Термодинамика</span>
+                    <span class="module-progress" id="progress-thermodynamics">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('electricity', this)">
+                    <span class="module-icon">🟣</span>
+                    <span>Электр және магнетизм</span>
+                    <span class="module-progress" id="progress-electricity">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('optics', this)">
+                    <span class="module-icon">🟠</span>
+                    <span>Оптика</span>
+                    <span class="module-progress" id="progress-optics">0%</span>
+                </li>
+                <li class="module-item" onclick="loadModule('quantum', this)">
+                    <span class="module-icon">⚫</span>
+                    <span>Квантық физика</span>
+                    <span class="module-progress" id="progress-quantum">0%</span>
+                </li>
+            </ul>
+            
+            <div class="progress-section">
+                <h4>📊 Жалпы прогрес</h4>
+                <div class="progress-bar">
+                    <div id="progressFill" class="progress-fill"></div>
+                </div>
+                <p id="progressText">0% өтті</p>
+            </div>
+
+            <div class="stats-section">
+                <h4>👥 Статистика</h4>
+                <p>Қатысушылар: <strong id="totalUsers">0</strong></p>
+                <p>✅ Өтті: <strong id="completedLessons">0</strong></p>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div id="lessonContainer" class="lesson-container">
+                <h2>Модульді таңдаңыз</h2>
+                <p>Сол жақтан модульді таңдап, сабақтарын өтіңіз!</p>
+                <div class="welcome-info">
+                    <p>🎓 Бұл платформада сіз 7-9 сынып физикасының барлық тақырыптарын өйтеңіз</p>
+                    <p>📚 Әр сабақта формулалар, сипаттамалар және тестілер бар</p>
+                    <p>✅ Өтті деп белгіленген сабақтарыңыздың прогресі сақталады</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="auth.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
